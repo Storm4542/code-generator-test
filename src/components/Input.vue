@@ -41,7 +41,6 @@ export default {
       type: Object,
       default: {
         width: '200px',
-        height: '80px'
       }
     },
     position: {

@@ -38,7 +38,6 @@ export default {
           styles: {
             color: 'red',
             width: '200px',
-            height: '80px'
           },
           position: {
             left: '10px',
@@ -64,7 +63,6 @@ export default {
           styles: {
             color: 'red',
             width: '200px',
-            height: '80px'
           },
           position: {
             left: '400px',
