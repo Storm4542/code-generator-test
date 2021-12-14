@@ -1,12 +1,10 @@
 <template>
   <div class="home">
-    <component 
-    v-for="c in defaultSetting" 
-    :key="c.id" 
-    :is="c.name" 
-    :propsValue="c.propsValue" 
-    :styles="c.styles"
-    ></component>
+    <component v-for="c in defaultSetting"
+               :key="c.id" :is="c.name"
+               :propsValue="c.propsValue"
+               :position="c.position"
+               :styles="c.styles"></component>
   </div>
 </template>
 
@@ -24,38 +22,57 @@ export default {
       defaultSetting: [
         {
           name: 'Input',
-          id:'1',
+          id: '1',
           propsValue: {
             value: '',
-            placeholder:'占位',
-            disabled:true,
-            resize:'none',
-            label:'名称',
-            type:'textarea',
-            clearable:false,
-            size:'medium'
+            placeholder: '占位',
+            disabled: false,
+            resize: 'none',
+            label: '名称',
+            type: 'text',
+            clearable: false,
+            size: 'medium',
+            'show-word-limit': true,
 
           },
-          styles:{
-            color:'red'
+          styles: {
+            color: 'red',
+            width: '200px',
+            height: '80px'
           },
+          position: {
+            left: '10px',
+            right: '',
+            top: '10px',
+            bottom: ''
+          }
+
         },
         {
           name: 'Input',
-          id:'2',
+          id: '2',
           propsValue: {
             value: '',
-            placeholder:'占位',
-            disabled:false,
-            resize:'vertical',
-            label:'条件',
-            type:'text',
-            clearable:true,
-            size:'medium'
+            placeholder: '占位',
+            disabled: false,
+            resize: 'vertical',
+            label: '条件',
+            type: 'text',
+            clearable: true,
+            size: 'medium'
           },
-          styles:{
-            color:'red'
+          styles: {
+            color: 'red',
+            width: '200px',
+            height: '80px'
           },
+          position: {
+            left: '400px',
+            right: '',
+            top: '10px',
+            bottom: ''
+          }
+
         }
       ]
     };
@@ -65,3 +82,8 @@ export default {
   },
 };
 </script>
+<style>
+.home {
+  position: relative;
+}
+</style>

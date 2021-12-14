@@ -1,37 +1,40 @@
 <template>
   <el-input v-model="propsValue.value"
-  :placeholder="propsValue.placeholder"
-  :disabled="propsValue.disabled"
-  :resize="propsValue.resize"
-  :label="propsValue.label"
-  :type="propsValue.type"
-  :style="{...styles,...position}" 
-  style="position: absolute"
-  :clearable="propsValue.clearable"
-  :size="propsValue.size"
+            :placeholder="propsValue.placeholder"
+            :disabled="propsValue.disabled"
+            :resize="propsValue.resize"
+            :label="propsValue.label"
+            :type="propsValue.type"
+            :style="{...styles,...position}"
+            style="position: absolute"
+            :clearable="propsValue.clearable"
+            :size="propsValue.size"
+            :show-word-limit="propsValue['show-word-limit']"
   ></el-input>
 </template>
 
 <script>
 export default {
   name: "Input",
-  props:{
-    propsValue:{
-      type:Object,
-      default:{
-        value:'文本框',
-        placeholder:'占位符',
-        disabled:'禁用',
-        resize:'缩放',
+  props: {
+    propsValue: {
+      type: Object,
+      default: {
+        value: '文本框',
+        placeholder: '占位符',
+        disabled: '禁用',
+        resize: '缩放',
         // 输入框关联的文字
-        label:'名称',
+        label: '名称',
         // 类型
-        type:'text',
-        //是否可清空  
-        clearable:true,
+        type: 'text',
+        //是否可清空
+        clearable: true,
         //输入框尺寸
-        size:'medium',
-        
+        size: 'medium',
+        //输入字数统计
+        'show-word-limit': false
+
       }
     },
     styles: {
@@ -43,15 +46,17 @@ export default {
     },
     position: {
       type: Object,
-      default: {
-        left: '',
-        right: '',
-        top: '',
-        bottom: ''
+      default: () => {
+        return {
+          left: '',
+          right: '',
+          top: '',
+          bottom: ''
+        };
       }
     }
   }
-}
+};
 </script>
 
 <style scoped>
