@@ -5,6 +5,8 @@
   :resize="propsValue.resize"
   :label="propsValue.label"
   :type="propsValue.type"
+  :style="{...styles,...position}" 
+  style="position: absolute"
   :clearable="propsValue.clearable"
   :size="propsValue.size"
   ></el-input>
@@ -29,10 +31,27 @@ export default {
         clearable:true,
         //输入框尺寸
         size:'medium',
+        
+      }
+    },
+    styles: {
+      type: Object,
+      default: {
+        width: '200px',
+        height: '80px'
+      }
+    },
+    position: {
+      type: Object,
+      default: {
+        left: '',
+        right: '',
+        top: '',
+        bottom: ''
       }
     }
   }
-};
+}
 </script>
 
 <style scoped>
