@@ -4,7 +4,8 @@
                :key="c.id" :is="c.name"
                :propsValue="c.propsValue"
                :position="c.position"
-               :styles="c.styles"></component>
+               :styles="c.styles"
+               :events="c.events"></component>
   </div>
 </template>
 
@@ -44,6 +45,9 @@ export default {
             right: '',
             top: '10px',
             bottom: ''
+          },
+          events:{
+            click:()=>{}
           }
 
         },
