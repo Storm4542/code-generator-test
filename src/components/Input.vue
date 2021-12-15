@@ -10,7 +10,8 @@
             :clearable="propsValue.clearable"
             :size="propsValue.size"
             :show-word-limit="propsValue['show-word-limit']"
-            @click="events.click"
+            @change="events.change"
+            @input="events.input"
   ></el-input>
 </template>
 
@@ -61,12 +62,15 @@ export default {
       type: Object,
       default: () => {
         return {
-          click: () => {},
-          change: () => {}
+          change: () => {console.log('默认change');},
+          input: () => {console.log('默认input');},
         };
       }
     }
   },
+  mounted() {
+    console.log(JSON.stringify(this.events));
+  }
 };
 </script>
 

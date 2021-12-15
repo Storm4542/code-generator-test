@@ -4,6 +4,7 @@
                :key="c.id" :is="c.name"
                :propsValue="c.propsValue"
                :position="c.position"
+               :events="c.events"
                :styles="c.styles"></component>
   </div>
 </template>

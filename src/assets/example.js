@@ -22,6 +22,11 @@ export default [
             right: '',
             top: '10px',
             bottom: ''
+        },
+        events: {
+            input: (value) => {console.log(`input:正在输入${value}`);},
+            change: (value) => {console.log(`change:正在输入${value}`);},
+
         }
     },
     {
@@ -73,10 +78,6 @@ export default [
             right: '',
             top: '150px',
             bottom: ''
-        },
-        events: {
-            click: () => {console.log('点击了input');},
-            change: () => {console.log('修改了input');}
         }
 
     }
