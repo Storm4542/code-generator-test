@@ -57,11 +57,13 @@ export default {
         };
       }
     },
-    events:{
-      type:Object,
-      default:{
-        click:()=>{},
-        change:()=>{}
+    events: {
+      type: Object,
+      default: () => {
+        return {
+          click: () => {},
+          change: () => {}
+        };
       }
     }
   }
