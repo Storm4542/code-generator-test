@@ -10,6 +10,7 @@
             :clearable="propsValue.clearable"
             :size="propsValue.size"
             :show-word-limit="propsValue['show-word-limit']"
+            @click="events.click"
   ></el-input>
 </template>
 
@@ -54,6 +55,13 @@ export default {
           top: '',
           bottom: ''
         };
+      }
+    },
+    events:{
+      type:Object,
+      default:{
+        click:()=>{},
+        change:()=>{}
       }
     }
   }
