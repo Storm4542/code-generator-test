@@ -22,8 +22,10 @@ export default {
       default: {
         value: '文本框',
         placeholder: '占位符',
-        disabled: '禁用',
-        resize: '缩放',
+        //禁用
+        disabled: false,
+        //控制缩放
+        resize: 'none',
         // 输入框关联的文字
         label: '名称',
         // 类型
