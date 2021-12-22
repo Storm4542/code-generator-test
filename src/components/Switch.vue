@@ -1,5 +1,5 @@
 <template>
-    <div style="position: absolute" :style="{...styles,...position}">
+    <div>
         <el-switch
             v-model="propsValue.value"
             @change="events.change"
@@ -21,28 +21,28 @@ export default {
     props:{
         propsValue:{
             type:Object,
-            value:true,
-            'active-color':"#13ce66",
-            'inactive-color':"#ff4949",
-            'active-text':'右',
-            'inactive-text':'左',
-            'active-value':"100",
-            'inactive-value':"0",
-            disabled:false,
-            width:40,
+            default:{
+                value:true,
+                'active-color':"#13ce66",
+                'inactive-color':"#ff4949",
+                'active-text':'右',
+                'inactive-text':'左',
+                'active-value':"100",
+                'inactive-value':"0",
+                disabled:false,
+                width:40,
+            }
         },
-        styles: {
-            type: Object,
-            default: () => {return {};}
-        },
-        position: {
+        style: {
             type: Object,
             default: () => {
                 return {
-                left: '',
-                right: '',
-                top: '',
-                bottom: ''
+                    left: '',
+                    right: '',
+                    top: '',
+                    bottom: '',
+                    width:'',
+                    height:'',
                 };
             }
         },

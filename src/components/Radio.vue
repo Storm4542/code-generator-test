@@ -1,5 +1,5 @@
 <template>
-    <div style="position: absolute" :style="{...styles,...position}">
+    <div>
         <el-radio-group 
         @change="events.change" 
         v-model="propsValue.value">
@@ -19,21 +19,21 @@ export default {
     props:{
         propsValue:{
             type:Object,
-            value:'1',
-            radioElements:[],
+            default:{
+                value:'1',
+                radioElements:[],
+            }
         },
-        styles: {
-            type: Object,
-            default: () => {return {};}
-        },
-        position: {
+        style: {
             type: Object,
             default: () => {
                 return {
-                left: '',
-                right: '',
-                top: '',
-                bottom: ''
+                    left: '',
+                    right: '',
+                    top: '',
+                    bottom: '',
+                    width:'',
+                    height:'',
                 };
             }
         },

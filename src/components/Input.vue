@@ -1,5 +1,6 @@
 <template>
-  <el-input v-model="propsValue.value"
+    <div>
+        <el-input v-model="propsValue.value"
             :placeholder="propsValue.placeholder"
             :disabled="propsValue.disabled"
             :resize="propsValue.resize"
@@ -12,7 +13,9 @@
             :show-word-limit="propsValue['show-word-limit']"
             @change="events.change"
             @input="events.input"
-  ></el-input>
+        ></el-input>
+    </div>
+  
 </template>
 
 <script>
@@ -41,21 +44,17 @@ export default {
 
       }
     },
-    styles: {
-      type: Object,
-      default: {
-        width: '200px',
-      }
-    },
-    position: {
+    style: {
       type: Object,
       default: () => {
-        return {
-          left: '',
-          right: '',
-          top: '',
-          bottom: ''
-        };
+          return {
+              left: '',
+              right: '',
+              top: '',
+              bottom: '',
+              width:'',
+              height:'',
+          };
       }
     },
     events: {

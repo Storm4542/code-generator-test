@@ -20,12 +20,17 @@ import Select from '../components/Select';
 import Cascader from '../components/Cascader';
 import Switchs from '../components/Switch';
 import Slider from '../components/Slider';
+import Timeselect from '../components/Timeselect';
+import Timepicker from '../components/Timepicker';
+import Datepicker from '../components/Datepicker';
 import defaultSetting from '../assets/example';
 
 export default {
   name: 'Home',
   components: {
-    Input, Table, Radio, Checkbox, InputNumber, Select, Cascader, Switchs, Slider
+    Input, Table, Radio, Checkbox, 
+    InputNumber, Select, Cascader, Switchs, Slider,
+    Timeselect, Timepicker, Datepicker
   },
   data() {
     return {
@@ -40,5 +45,6 @@ export default {
 <style>
 .home {
   position: relative;
+  height: 1000px;
 }
 </style>

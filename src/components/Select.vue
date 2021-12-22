@@ -1,5 +1,5 @@
 <template>
-    <div style="position: absolute" :style="{...styles,...position}">
+    <div>
         <el-select 
             v-model="propsValue.value" 
             :placeholder="propsValue.placeholder"
@@ -37,56 +37,56 @@ export default {
     props:{
         propsValue:{
             type:Object,
-            value:'',
-            options: [
-                {
-                value: '选项1',
-                label: '黄金糕'
-                }, {
-                value: '选项2',
-                label: '双皮奶'
-                }, {
-                value: '选项3',
-                label: '蚵仔煎'
-                }, {
-                value: '选项4',
-                label: '龙须面'
-                }, {
-                value: '选项5',
-                label: '北京烤鸭'
-                }
-            ],
-            multiple:false,
-            disabled:false,
-            clearable:true,
-            'multiple-limit':0,
-            autocomplete:'off',
-            placeholder:'请选择',
-            filterable:false,
-            'filter-method':function (params) {
-                console.log(params);
-            },
-            remote:false,
-            'remote-method':function (params) {
-                console.log(params);
-            },
-            loading:false,
-            'loading-text':'加载中',
-            size:'small',
-            'allow-create':false,
+            default:{
+                value:'',
+                options: [
+                    {
+                    value: '选项1',
+                    label: '黄金糕'
+                    }, {
+                    value: '选项2',
+                    label: '双皮奶'
+                    }, {
+                    value: '选项3',
+                    label: '蚵仔煎'
+                    }, {
+                    value: '选项4',
+                    label: '龙须面'
+                    }, {
+                    value: '选项5',
+                    label: '北京烤鸭'
+                    }
+                ],
+                multiple:false,
+                disabled:false,
+                clearable:true,
+                'multiple-limit':0,
+                autocomplete:'off',
+                placeholder:'请选择',
+                filterable:false,
+                'filter-method':function (params) {
+                    console.log(params);
+                },
+                remote:false,
+                'remote-method':function (params) {
+                    console.log(params);
+                },
+                loading:false,
+                'loading-text':'加载中',
+                size:'small',
+                'allow-create':false,
+            }
         },
-        styles: {
-            type: Object,
-            default: () => {return {};}
-        },
-        position: {
+        style: {
             type: Object,
             default: () => {
                 return {
-                left: '',
-                right: '',
-                top: '',
-                bottom: ''
+                    left: '',
+                    right: '',
+                    top: '',
+                    bottom: '',
+                    width:'',
+                    height:'',
                 };
             }
         },

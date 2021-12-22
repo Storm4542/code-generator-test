@@ -13,16 +13,13 @@ export default [
             size: 'medium',
             'show-word-limit': true
         },
-        styles: {
-            color: 'red',
-            width: '200px',
-            height:'50px'
-        },
-        position: {
-            left: '10px',
-            right: '',
-            top: '10px',
-            bottom: ''
+        style: {
+          width: '',
+          height:'',
+          left: '',
+          right: '',
+          top: '',
+          bottom: ''
         },
         events: {
             input: (value) => {console.log(`input:正在输入${value}`);},
@@ -71,16 +68,14 @@ export default [
             ],
 
         },
-        styles: {
-            width: '100%'
+        style: {
+          width: '',
+          height:'',
+          left: '',
+          right: '',
+          top: '',
+          bottom: ''
         },
-        position: {
-            left: '',
-            right: '',
-            top: '150px',
-            bottom: ''
-        }
-
     },
     {
         name:'Radio',
@@ -108,16 +103,13 @@ export default [
                 }
             ],
         },
-        styles: {
-            width: '100%',
-            // todo 源码样式修改高度
-            height:"40px"
-        },
-        position: {
-            left: '',
-            right: '',
-            top: '100px',
-            bottom: ''
+        style: {
+          width: '',
+          height:'',
+          left: '',
+          right: '',
+          top: '',
+          bottom: ''
         },
         events: {
             change: (value) => {console.log(`change:正在输入${value}`);},
@@ -151,16 +143,13 @@ export default [
             min:0,
             max:2
         },
-        styles: {
-            width: '100%',
-            // todo 源码样式修改高度
-            height:"40px"
-        },
-        position: {
-            left: '',
-            right: '',
-            top: '400px',
-            bottom: ''
+        style: {
+          width: '',
+          height:'',
+          left: '',
+          right: '',
+          top: '',
+          bottom: ''
         },
         events: {
             change: (value) => {console.log(`change:正在输入${value}`);},
@@ -181,14 +170,13 @@ export default [
             'controls-position':'',
             label:'描述'
         },
-        styles: {
-            width: '100%',
-        },
-        position: {
-            left: '',
-            right: '',
-            top: '450px',
-            bottom: ''
+        style: {
+          width: '',
+          height:'',
+          left: '',
+          right: '',
+          top: '',
+          bottom: ''
         },
         events: {
             change: (value) => {console.log(`change:正在输入${value}`);},
@@ -236,14 +224,13 @@ export default [
             'loading-text':'加载中',
             size:'small',
         },
-        styles: {
-            width: '100%',
-        },
-        position: {
-            left: '',
-            right: '',
-            top: '500px',
-            bottom: ''
+        style: {
+          width: '',
+          height:'',
+          left: '',
+          right: '',
+          top: '',
+          bottom: ''
         },
         events: {
             change: (value) => {console.log(`change:正在选中${value}`);},
@@ -468,14 +455,13 @@ export default [
             size:'small',
             debounce:0,
         },
-        styles: {
-            width: '100%',
-        },
-        position: {
-            left: '',
-            right: '',
-            top: '550px',
-            bottom: ''
+        style: {
+          width: '',
+          height:'',
+          left: '',
+          right: '',
+          top: '',
+          bottom: ''
         },
         events: {
             change: (value) => {console.log(`change:正在选中${value}`);},
@@ -497,14 +483,13 @@ export default [
             disabled:false,
             width:40,
         },
-        styles: {
-            width: '100%',
-        },
-        position: {
-            left: '',
-            right: '',
-            top: '600px',
-            bottom: ''
+        style: {
+          width: '',
+          height:'',
+          left: '',
+          right: '',
+          top: '',
+          bottom: ''
         },
         events: {
             change: (value) => {console.log(`change:正在选中${value}`);},
@@ -517,18 +502,109 @@ export default [
             value:0,
             min:0,
             max:100,
+            disabled:false,
+            step:1,
+            'show-input':false,
+            'show-input-controls':true,
+            'input-size':'small',
+            'show-stops':false,
+            'show-tooltip':true,
+            'format-tooltip':function (params) {
+                console.log(params);
+            },
+            range:false,
+            vertical:false,
+            height:'',
+            label:'',
+            debounce:300,
+            'tooltip-class':''
         },
-        styles: {
-            width: '100%',
-        },
-        position: {
-            left: '',
-            right: '',
-            top: '650px',
-            bottom: ''
+        style: {
+          width: '',
+          height:'',
+          left: '',
+          right: '',
+          top: '',
+          bottom: ''
         },
         events: {
-            change: (value) => {console.log(`change:正在选中${value}`);},
+            change: (value) => {console.log(`change:值改变时触发${value}`);},
+            input: (value) => {console.log(`input:数据改变时触发${value}`);},
+        }
+    },
+    {
+        name:'Timeselect',
+        id:'10',
+        propsValue:{
+            value:"",
+            'picker-options':{
+                start: '08:30',
+                step: '00:15',
+                end: '18:30',
+                minTime: '',
+            },
+            readonly:false,
+            disabled:false,
+            editable:true,
+            clearable:true,
+            size:'small',
+            placeholder:'请选择',
+            align:"center",
+            'popper-class':'',
+            'range-separator':'-',
+
+        },
+        sstyle: {
+          width: '',
+          height:'',
+          left: '',
+          right: '',
+          top: '',
+          bottom: ''
+        },
+        events: {
+            change: (value) => {console.log(`change:值改变时触发${value}`);},
+            blur: (value) => {console.log(`blur:值改变时触发${value}`);},
+            focus: (value) => {console.log(`focus:值改变时触发${value}`);},
+        }
+    },
+    {
+        name:'Timepicker',
+        id:'11',
+        propsValue:{
+            value:"",
+            'picker-options':{
+                selectableRange: '18:30:00 - 20:30:00'
+            },
+            readonly:false,
+            disabled:false,
+            editable:true,
+            clearable:true,
+            size:'small',
+            placeholder:'请选择',
+            align:"center",
+            'popper-class':'',
+            'range-separator':'-',
+            'start-placeholder':"开始时间",
+            'end-placeholder':"结束时间",
+            'is-range':false,
+            'arrow-control':false,
+            'value-format':'',
+            format:'',
+            'default-value':new Date()
+        },
+        style: {
+          width: '',
+          height:'',
+          left: '',
+          right: '',
+          top: '',
+          bottom: ''
+        },
+        events: {
+            change: (value) => {console.log(`change:值改变时触发${value}`);},
+            blur: (value) => {console.log(`blur:值改变时触发${value}`);},
+            focus: (value) => {console.log(`focus:值改变时触发${value}`);},
         }
     }
 ];
